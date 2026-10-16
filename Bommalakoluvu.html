@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bommala Koluvu 2026</title>
+<meta name="description" content="A guided audio tour of our Bommala Koluvu doll display, narrated by our 10-year-old.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@500;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fff8ec;
+    --card: #ffffff;
+    --ink: #3b1d12;
+    --muted: #7a5a4a;
+    --maroon: #8b1e2d;
+    --marigold: #f2a20c;
+    --turmeric: #f7d046;
+    --leaf: #2f6b3a;
+    --line: #f0dcc0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1210;
+      --card: #2a1b17;
+      --ink: #fbeee0;
+      --muted: #d1b8a6;
+      --maroon: #e0707e;
+      --marigold: #f5b53a;
+      --turmeric: #f7d046;
+      --leaf: #7cc28a;
+      --line: #4a332b;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /* Marigold garland (thoranam) across the top */
+  .garland {
+    height: 26px;
+    background:
+      radial-gradient(circle at 13px 6px, var(--marigold) 9px, transparent 10px) 0 0 / 26px 26px repeat-x,
+      radial-gradient(circle at 13px 6px, var(--turmeric) 4px, transparent 5px) 0 0 / 26px 26px repeat-x;
+  }
+  .mango-leaves {
+    height: 22px;
+    background:
+      radial-gradient(ellipse 7px 18px at 50% 0, var(--leaf) 98%, transparent 100%) 0 0 / 52px 22px repeat-x;
+    margin-top: -10px;
+    opacity: .9;
+  }
+
+  header {
+    text-align: center;
+    padding: 28px 16px 12px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .telugu {
+    font-family: "Noto Sans Telugu", sans-serif;
+    font-weight: 700;
+    color: var(--maroon);
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 7vw, 3rem);
+    margin: 4px 0 8px;
+    color: var(--maroon);
+  }
+  .intro { color: var(--muted); margin: 0 auto 8px; max-width: 600px; }
+  .narrator { font-weight: 600; color: var(--ink); }
+
+  nav {
+    max-width: 760px;
+    margin: 16px auto 0;
+    padding: 0 16px;
+  }
+  nav ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  nav a {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1.5px solid var(--marigold);
+    border-radius: 999px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: .95rem;
+    background: var(--card);
+  }
+  nav a:hover, nav a:focus { background: var(--marigold); color: #3b1d12; }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+  }
+  .display {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-top: 6px solid var(--marigold);
+    border-radius: 14px;
+    padding: 20px 20px 16px;
+    margin: 22px 0;
+    box-shadow: 0 2px 10px rgba(139, 30, 45, .07);
+    scroll-margin-top: 16px;
+  }
+  .display.main-display { border-top-color: var(--maroon); }
+  .step {
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+  }
+  .display h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.6rem;
+    margin: 2px 0 12px;
+    color: var(--maroon);
+  }
+  .dedication { margin: -6px 0 12px; color: var(--leaf); font-style: italic; }
+  audio { width: 100%; margin: 4px 0 12px; }
+  details {
+    border-top: 1px dashed var(--line);
+    padding-top: 10px;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--leaf);
+  }
+  .narration p { margin: 10px 0; }
+  .next {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: .95rem;
+    color: var(--maroon);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .next:hover { text-decoration: underline; }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .9rem;
+    padding: 10px 16px 36px;
+  }
+</style>
+</head>
+<body>
+
+<div class="garland" aria-hidden="true"></div>
+<div class="mango-leaves" aria-hidden="true"></div>
+
+<header>
+  <p class="telugu">బొమ్మల కొలువు</p>
+  <h1>Bommala Koluvu 2026</h1>
+  <p class="intro">
+    Welcome to our home and our festival doll display! Walk through each display in order and press play
+    to hear the story.
+  </p>
+</header>
+
+<nav aria-label="Displays">
+  <ol>
+    <li><a href="#village-life">1 · Village Life</a></li>
+    <li><a href="#dancers">2 · Dancers</a></li>
+    <li><a href="#main-display">Main Display</a></li>
+    <li><a href="#forests">3 · Forests</a></li>
+    <li><a href="#telugu-wedding">4 · Telugu Wedding</a></li>
+  </ol>
+</nav>
+
+<main>
+
+  <section class="display" id="village-life">
+    <p class="step">Stop 1 of 5 · 1st Display</p>
+    <h2>Village Life</h2>
+    <audio controls preload="metadata" src="audio/01-village-life.m4a">
+      Your browser can't play this audio.
+    </audio>
+    <details open>
+      <summary>Read along</summary>
+      <div class="narration">
+        <p>Welcome to our 1st display, village life! It may look busy, but that’s part of the fun. There’s a little story in every corner!</p>
+        <p>These scenes show traditional village occupations and everyday activities before modern machines became common. Many of these traditions continue today.</p>
+        <p>Here’s something special: all the dolls in this display and our wedding display are Kondapalli Bommalu, made by artisans from Kondapalli, near Vijayawada. My grandparents come from Vijayawada, so these dolls have a special connection to our family. Choosing handmade dolls is our way of supporting artisans and celebrating our culture and roots.</p>
+        <p>Let’s begin with the top row, from left to right.</p>
+        <p>First, we see a man traveling in a horse cart, followed by a village tailor making clothes. Next is a woman pumping water from a borewell.</p>
+        <p>Beside her, you will see some hardworking farmworkers and a farmer working the land with bullocks pulling a nagali, a Telugu word for a plough.</p>
+        <p>Then comes the tea stall, where people gather for chai, read newspapers, and catch up with one another. The row ends with a cheerful village Sankranti celebration.</p>
+        <p>Now, follow the middle row from left to right.</p>
+        <p>We begin at the vegetable market, followed by a weaver making cloth, a potter shaping pots, and a cloth seller.</p>
+        <p>Next is a fortune teller with a parrot, a traditional scene called Chilaka Josyam.</p>
+        <p>The row ends with Burrakatha performers, sharing stories through narration, music, and humor.</p>
+        <p>Our bottom row celebrates hardworking women and their everyday skills. Again, start on the left.</p>
+        <p>First is a woman making chapatis, followed by another preparing herbs, and another grinding batter by hand.</p>
+        <p>Next, a woman lays out vadiyalu to dry in the sun, ready to be fried and enjoyed later.</p>
+        <p>Beside her, another woman cleans rice using a chata, or winnowing basket, to separate the grain from the husks.</p>
+        <p>Then we see a woman grinding wheat into flour, followed by another churning butter.</p>
+        <p>Our final scene shows two women engaged in Sodi Cheppadam, with a Sodamma telling the other woman her fortune.</p>
+        <p>These little dolls celebrate the work, skills, and stories that bring a village to life. Thank you for exploring our Kondapalli Bommalu village with me!</p>
+      </div>
+    </details>
+    <a class="next" href="#dancers">Next: Dancers →</a>
+  </section>
+
+  <section class="display" id="dancers">
+    <p class="step">Stop 2 of 5 · 2nd Display</p>
+    <h2>Dancers</h2>
+    <audio controls preload="metadata" src="audio/02-dancers.m4a">
+      Your browser can't play this audio.
+    </audio>
+    <details open>
+      <summary>Read along</summary>
+      <div class="narration">
+        <p>Welcome to our second display, celebrating India’s dances, architecture, and traditional textiles!</p>
+        <p>Alongside the dancers, you’ll see pictures of famous Indian monuments and buildings. Their names are on the display, so take a closer look as you explore!</p>
+        <p>Here’s a fun detail: the paper mats beneath our dancers feature designs inspired by textiles from their regions. Each mat is part of the story!</p>
+        <p>Starting at the top left, we have our Bharatanatyam dancer, representing Tamil Nadu. Her mat combines Madras checks with Kanchi silk-inspired designs.</p>
+        <p>On the right is our Kuchipudi dancer from Andhra Pradesh, standing on a Kalamkari-inspired mat. These two dancers present our boards of India’s architectural landmarks.</p>
+        <p>In the middle, wearing yellow, is our Kathak dancer. Kathak grew from storytelling traditions in North India and later flourished in royal courts, including the Mughal courts. Her Banarasi-inspired mat celebrates Varanasi’s connection to this dance tradition.</p>
+        <p>Now, starting again from the left, we have the Mohiniyattam dancer from Kerala. Her mat features the elegant Kasavu design, known for its cream and gold.</p>
+        <p>Beside her is our Manipuri dancer from Manipur. Her mat features Moirang Phee, a traditional textile design from the region.</p>
+        <p>Next comes Kathakali, another dance tradition from Kerala, famous for its dramatic costumes and expressive storytelling. Its mat is inspired by Kasaragod cotton.</p>
+        <p>Our display ends with the Odissi dancer from Odisha, standing on a mat inspired by Sambalpuri cotton designs.</p>
+        <p>From the dancers and their costumes to the patterns beneath their feet, this display brings together many ways India tells its stories!</p>
+      </div>
+    </details>
+    <a class="next" href="#main-display">Next: Main Display →</a>
+  </section>
+
+  <section class="display main-display" id="main-display">
+    <p class="step">Stop 3 of 5 · Middle / Main Display</p>
+    <h2>The Main Display</h2>
+    <audio controls preload="metadata" src="audio/03-main-display.m4a">
+      Your browser can't play this audio.
+    </audio>
+    <details open>
+      <summary>Read along</summary>
+      <div class="narration">
+        <p>And now, welcome to the heart of our Bommala Koluvu, our main display in the middle!</p>
+        <p>At the very top is Durga Ammavaru, watching over our celebration. This is where we bring together our devotion, our traditions, and a colorful collection of dolls gathered over many years.</p>
+        <p>Alongside Ammavaru are the Ashta Lakshmis, the eight forms of Goddess Lakshmi. As you look down the steps, you’ll discover many more beloved figures and stories.</p>
+        <p>There is a scene from the Bhagavad Gita, the Dasavataram, showing ten incarnations of Lord Vishnu, and the beautiful Kamadhenu cows.</p>
+        <p>You’ll also find the Trinity of Carnatic music, three great composers whose music continues to be celebrated today.</p>
+        <p>And look out for the famous three monkeys, reminding us to see no evil, hear no evil, and speak no evil!</p>
+        <p>On the bottom step, the stories of Krishna come to life through our Krishna Leela scenes. These represent episodes from Dasama Skandha, the tenth book of the Bhagavatam, which tells the stories of Lord Krishna.</p>
+        <p>But before you move on, there’s one little pair you must find!</p>
+        <p>My mom’s favorite dolls are the tiny Radha and Krishna, lying on their tummies and crawling toward each other. Among all these grand figures and wonderful stories, those two little dolls have a very special place in her heart.</p>
+        <p>Take your time looking at each step. This collection has grown over the years, and bringing it together for Navaratri is something our family loves.</p>
+        <p>We’re so happy to share it with you.</p>
+      </div>
+    </details>
+    <a class="next" href="#forests">Next: Forests →</a>
+  </section>
+
+  <section class="display" id="forests">
+    <p class="step">Stop 4 of 5 · 3rd Display</p>
+    <h2>Forests</h2>
+    <p class="dedication">In loving memory of Lakshman Gampa · Chinnababu Tata 🌳</p>
+    <audio controls preload="metadata" src="audio/04-forests.m4a">
+      Your browser can't play this audio.
+    </audio>
+    <details open>
+      <summary>Read along</summary>
+      <div class="narration">
+        <p>Our third display is about protecting forests, caring for our ecosystems, supporting farmers, and leaving a greener world for the children who come after us.</p>
+        <p>But this table also holds someone very special in our hearts.</p>
+        <p>It is dedicated to Lakshman Gampa, whom Aaradhya and I lovingly call Chinnababu Tata.</p>
+        <p>Tata spent his life working as a forest officer. He believed deeply in protecting forests and in social forestry, helping people grow and care for trees in their communities.</p>
+        <p>His love for nature was something you could see all around him. His home looked like a little park, filled with plants he collected from nurseries across South India. Sitting outside meant being surrounded by greenery that he had cared for with so much love.</p>
+        <p>And that same love reached the people around him.</p>
+        <p>Tata had a big heart. He cared for his large family, nieces, nephews, grandchildren, and so many others. He was one of the kindest people in our family.</p>
+        <p>Tata recently passed away, and we miss him very much.</p>
+        <p>This year, we wanted to give his love for nature a special place in our Bommala Koluvu. When you look at this little forest, we hope you will think of him, a man who cared deeply for living things, and for the world he would leave behind.</p>
+        <p>This display reminds us that we can carry his work forward: by planting and protecting trees, caring for wildlife, saving water, and supporting the farmers who grow our food.</p>
+        <p>Tata, this little forest is for you.</p>
+        <p>Thank you for the love you gave our family and the care you gave the earth.</p>
+        <p>We will keep your memory close and help the things you loved keep growing.</p>
+      </div>
+    </details>
+    <a class="next" href="#telugu-wedding">Next: Telugu Wedding →</a>
+  </section>
+
+  <section class="display" id="telugu-wedding">
+    <p class="step">Stop 5 of 5 · 4th Display</p>
+    <h2>Telugu Wedding</h2>
+    <audio controls preload="metadata" src="audio/05-telugu-wedding.m4a">
+      Your browser can't play this audio.
+    </audio>
+    <details open>
+      <summary>Read along</summary>
+      <div class="narration">
+        <p>Welcome to the 4th display, our Telugu wedding! Let’s follow the celebrations, starting with the top row, from left to right.</p>
+        <p>We begin with Pasupu Danchatam, where turmeric is pounded to mark the start of the wedding festivities. The groom is then prepared and blessed as the Pelli Koduku, or bridegroom. The bride is also prepared and blessed as the Pelli Koothuru at the same time.</p>
+        <p>Next, the bride arrives in a basket called the Pelli Butta, carried by her maternal uncles. In this tradition, she is honored as Goddess Lakshmi and carried to the wedding platform without her feet touching the ground.</p>
+        <p>Then comes the Muhurtam, the auspicious time chosen by the priest using the couple’s astrological charts. The bride and groom place Jeelakarra Bellam, a paste of cumin and jaggery, on each other’s heads, symbolizing their union. Everyone showers them with turmeric rice and blessings.</p>
+        <p>Next, the groom ties the Mangala Sutra around the bride’s neck with three knots, marking their marriage.</p>
+        <p>The first row ends with Thalambralu! The bride and groom playfully pour turmeric rice over each other’s heads, filling the ceremony with laughter.</p>
+        <p>Now, move to the second row, again from left to right.</p>
+        <p>First comes Ungarala Aata, the ring game! The priest drops their rings into a water-filled pot called a binde. The bride and groom each reach in with one hand and race to find the rings. Whoever finds one first wins!</p>
+        <p>Next, the priest shows them Arundhati Nakshatra, the star seen beside Vasistha. Arundhati and Vasistha are remembered as an ideal couple, reminding the newlyweds to share a life of loyalty, love, and companionship.</p>
+        <p>After the ceremonies, family and friends gather to enjoy a delicious wedding feast.</p>
+        <p>Then comes Gruhapravesam, when the bride is warmly welcomed into the groom’s family home by her mother-in-law and family.</p>
+        <p>Our final scene shows the next day’s Satyanarayana Swami Vratam. The newlyweds perform this puja together as husband and wife, seeking blessings for a happy and prosperous life.</p>
+        <p>And that completes our wedding story, a celebration of tradition, family, and new beginnings!</p>
+      </div>
+    </details>
+    <a class="next" href="#village-life">↑ Back to the start</a>
+  </section>
+
+</main>
+
+<footer>
+  Thank you for visiting! Happy Dasara &amp; Navaratri. 🪔<br>
+  Roots and Riddles LLC
+</footer>
+
+<script>
+  // Only one narration plays at a time.
+  document.querySelectorAll("audio").forEach(function (player) {
+    player.addEventListener("play", function () {
+      document.querySelectorAll("audio").forEach(function (other) {
+        if (other !== player) other.pause();
+      });
+    });
+  });
+</script>
+</body>
+</html>
